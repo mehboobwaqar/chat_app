@@ -38,7 +38,7 @@ class _LoginScreenState extends State<LoginScreen> {
           
          
 
-          Utils.snackBar('Login Signup', context);
+          Utils.snackBar('Login successfully', context);
           Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => ChatScreen()));
 
       } on FirebaseAuthException catch (e) {
