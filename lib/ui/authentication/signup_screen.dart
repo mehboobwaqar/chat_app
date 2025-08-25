@@ -81,6 +81,9 @@ class _SignupScreenState extends State<SignupScreen> {
       if(e.code == 'email-already-in-use'){
         Utils.snackBar(e.message ?? 'email-already-in-use', context);
       }
+      if(e.code == 'user-token-expired'){
+        Utils.snackBar(e.message ?? 'user-token-expired', context);
+      }
        if(e.code == 'invalid-email'){
        
         Utils.snackBar(e.message ?? 'invalid email', context);
