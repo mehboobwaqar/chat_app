@@ -17,6 +17,8 @@ class _NewMessageState extends State<NewMessage> {
 
     if (enteredMessage.isEmpty) return;
 
+    _textController.clear();
+
     final user = FirebaseAuth.instance.currentUser!;
     final userData = await FirebaseFirestore.instance
         .collection('users')
@@ -29,8 +31,6 @@ class _NewMessageState extends State<NewMessage> {
       'userId': user.uid,
       'userName': userData.data()!['userName'],
     });
-
-    _textController.clear();
   }
 
   @override
@@ -66,7 +66,7 @@ class _NewMessageState extends State<NewMessage> {
                 autofocus: true,
                 enableSuggestions: true,
                 decoration: const InputDecoration(
-                  hintText: 'Type a message...',
+                  hintText: 'Type a message...',          
                   border: InputBorder.none,
                 ),
               ),
