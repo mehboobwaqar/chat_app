@@ -39,7 +39,7 @@ class _LoginScreenState extends State<LoginScreen> {
          
 
           Utils.snackBar('Login Signup', context);
-          Navigator.of(context).push(MaterialPageRoute(builder: (context) => ChatScreen()));
+          Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => ChatScreen()));
 
       } on FirebaseAuthException catch (e) {
   if (e.code == 'invalid-email') {
